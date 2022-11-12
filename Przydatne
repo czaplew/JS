@@ -1,0 +1,2 @@
+var car = {}
+console.log(car.field && car.field.lenght) - w ten sposob mozemy sprawdzic czy istnieje taki properties
