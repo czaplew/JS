@@ -1,0 +1,14 @@
+ // inController
+ public listenToRootProperty<R extends keyof T>(
+    property: R,
+    listener: (val: T[R]) => any
+  ) {
+    this.bindRootProperty(property).attachChange((event: Event) => {
+      listener((<any>event).getSource().getValue());
+    });
+  }
+  
+  // Usage
+      this.supplierDocumentDetailsModel.listenToRootProperty('details', (details) => {
+      this.adjustPanelHeight(details);
+    });
